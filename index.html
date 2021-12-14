@@ -4,74 +4,10 @@
   <meta charset="utf-8">
   <title>Tabbed info box</title>
   <style>
-      html {
-  font-family: sans-serif;
-}
-a
 * {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}   
-.info-box {
-  width: 450px;
-  height: 400px;
-  margin: 0 auto;
-}
-.info-box ul {
-  padding-left: 0;
-  margin-top: 600px;
-}
-.info-box li {
-  float: right;
-  list-style-type: none;
-  width: 150px;
-}
-
-.info-box li a {
-  display: inline-block;
-  text-decoration: none;
-  width: 100%;
-  line-height: 3;
-  background-color: rgb(64, 116, 113);
-  color: white;
-  text-align: center;
-}
-.info-box li a:focus, .info-box li a:hover {
-  background-color: #4ca790;
-  color: black;
-}
-
-.info-box li a.active {
-  background-color: #4ca790;
-  color: black;
-}
-.info-box .panels {
-  height: 300px;
-  position: relative;
-  clear: both;
-}
-.info-box article {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 450px;
-  height: 300px;
-  padding: 10px;
-  color: black;
-  background-color: #88a19d;
-}
-
-.info-box .active-panel {
-  z-index: 1;
-}
-
-/* * {
     margin: 0;
     padding: 0
-}*/
+}
 
 .home {
     height: 100%;
@@ -244,71 +180,6 @@ span {
             <a href='./history.html'><span>计算器历史</span></a>
             <a href='./calculator.html'><span>计算器</span></a>
         </div>
-    </div>
-
-  <section class="info-box">
-    <ul>
-      <li><a href="#" class="active">普通存储求收益</a></li>
-      <li><a href="#">连续存储求收益</a></li>
-      <li><a href="#">连续存储求年金</a></li>
-    </ul>
-  <div class="panels">
-    <article class="active-panel">
-
-      <p><span class="span1">本金：</span><input id="benjin" type="text" ><span> 元</span></p>
-        <p><span class="span1">利率：</span><input id="shouyilv" type="text"><span>&nbsp; %</span></p>
-        <p><span class="span1">存储年限：</span><input id="touzinianxian" type="text"><span> 年</span></p>
-        <div><a class="jisuanBtn" onclick="jisuanOne(1)">计算</a><a onclick="jisuanOne(2)" class="qingkongBtn">清空</a></div>
-        <p class="last"><span class="span1">最终收益：</span><input id="zuizhongshouyi" type="text"><span> 元</span></p>
-    </article>
-    <article>
-
-      <p><span class="span1">预计每年存储金额：</span><input id="benjin" type="text" ><span> 元</span></p>
-        <p><span class="span1">利率：</span><input id="shouyilv" type="text"><span>&nbsp; %</span></p>
-        <p><span class="span1">存储年限：</span><input id="touzinianxian" type="text"><span> 年</span></p>
-        <div><a class="jisuanBtn" onclick="jisuanTwo(1)">计算</a><a onclick="jisuanTwo(2)" class="qingkongBtn">清空</a></div>
-        <p class="last"><span class="span1">最终收益：</span><input id="zuizhongshouyi" type="text"><span> 元</span></p>
-    </article>
-    <article>
-
-      <p><span class="span1">预计最终取出金额：</span><input id="benjin" type="text" ><span> 元</span></p>
-                <p><span class="span1">利率：</span><input id="shouyilv" type="text"><span>&nbsp; %</span></p>
-                <p><span class="span1">存储年限：</span><input id="touzinianxian" type="text"><span> 年</span></p>
-                <div><a class="jisuanBtn" onclick="jisuanThree(1)">计算</a><a onclick="jisuanThree(2)" class="qingkongBtn">清空</a></div>
-                <p class="last"><span class="span1">每年存储金额：</span><input id="zuizhongshouyi" type="text"><span> 元</span></p>
-    </article>
-  </div>
-</section>
-
-<script>
-    var tabs = document.querySelectorAll('.info-box li a');
-var panels = document.querySelectorAll('.info-box article');
-
-for(i = 0; i < tabs.length; i++) {
-  var tab = tabs[i];
-  setTabHandler(tab, i);
-}
-
-function setTabHandler(tab, tabPos) {
-  tab.onclick = function() {
-    for(i = 0; i < tabs.length; i++) {
-      if(tabs[i].getAttribute('class')) {
-        tabs[i].removeAttribute('class');
-      }
-    }
-
-    tab.setAttribute('class', 'active');
-
-    for(i = 0; i < panels.length; i++) {
-      if(panels[i].getAttribute('class')) {
-        panels[i].removeAttribute('class');
-      }
-    }
-
-    panels[tabPos].setAttribute('class', 'active-panel');
-  }
-}
-</script>
-  
+    </div> 
 </body>
 </html>
