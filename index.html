@@ -7,100 +7,17 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div class="wrap">
-        <div calss = "nav">
-        <div class="top">
-            <span class="one" onclick="change(1)"><a class="active">普通存储求收益</a></span>
-            <span class="two" onclick="change(2)"><a>连续存储求收益</a></span>
-            <span class="three" onclick="change(3)"><a>连续存储求年金</a></span>
-        </div>
-        </div>
-        <div class="bottom">
-            <div class="box-one">
-                <p><span class="span1">本金：</span><input id="benjin" type="text" ><span> 元</span></p>
-                <p><span class="span1">利率：</span><input id="shouyilv" type="text"><span>&nbsp; %</span></p>
-                <p><span class="span1">存储年限：</span><input id="touzinianxian" type="text"><span> 年</span></p>
-                <div><a class="jisuanBtn" onclick="jisuanOne(1)">计算</a><a onclick="jisuanOne(2)" class="qingkongBtn">清空</a></div>
-                <p class="last"><span class="span1">最终收益：</span><input id="zuizhongshouyi" type="text"><span> 元</span></p>
-            </div>
-            <div class="box-two">
-                <p><span class="span1">预计每年存储金额：</span><input id="benjin" type="text" ><span> 元</span></p>
-                <p><span class="span1">利率：</span><input id="shouyilv" type="text"><span>&nbsp; %</span></p>
-                <p><span class="span1">存储年限：</span><input id="touzinianxian" type="text"><span> 年</span></p>
-                <div><a class="jisuanBtn" onclick="jisuanTwo(1)">计算</a><a onclick="jisuanTwo(2)" class="qingkongBtn">清空</a></div>
-                <p class="last"><span class="span1">最终收益：</span><input id="zuizhongshouyi" type="text"><span> 元</span></p>
-            </div>
-            <div class="box-three">
-                <p><span class="span1">预计最终取出金额：</span><input id="benjin" type="text" ><span> 元</span></p>
-                <p><span class="span1">利率：</span><input id="shouyilv" type="text"><span>&nbsp; %</span></p>
-                <p><span class="span1">存储年限：</span><input id="touzinianxian" type="text"><span> 年</span></p>
-                <div><a class="jisuanBtn" onclick="jisuanThree(1)">计算</a><a onclick="jisuanThree(2)" class="qingkongBtn">清空</a></div>
-                <p class="last"><span class="span1">每年存储金额：</span><input id="zuizhongshouyi" type="text"><span> 元</span></p>
-            </div>
-
+  <div class="home">
+    <div class="content">
+        <img class="bgc" src="./photo/backgound1.jpg" width="100%" alt="">
+        <h3 class="title">存款利息计算器</h3>
+        <h3 class="titles">用来计算存款相关数据的计算器</h3>
+        <img class="icon" src="./photo/down.png" alt="">
+        <div class='ribbon'>
+            <a href='./index.html'><span>首页</span></a>
+            <a href='./history.html'><span>智能财务历史</span></a>
+            <a href='./calculator.html'><span>智能财务计算器</span></a>
         </div>
     </div>
-    <script src="jquery-1.11.0.min.js"></script>
-<script src="bignumber.js"></script>
-<script>
-
-    function change(x){
-        console.log(x);
-        if(x==1){
-            $(".one a").addClass('active');
-            $(".two a").removeClass('active');
-            $(".three a").removeClass('active');
-            $(".four a").removeClass('active');
-            $(".bottom .box-one").removeClass('none');
-            $(".bottom .box-three").addClass('none');
-            $(".bottom .box-two").addClass('none');
-            $(".bottom .box-four").addClass('none');
-        }else if(x==2){
-            $(".two a").addClass('active');
-            $(".one a").removeClass('active');
-            $(".three a").removeClass('active');
-            $(".four a").removeClass('active');
-            $(".bottom .box-two").removeClass('none');
-            $(".bottom .box-one").addClass('none');
-            $(".bottom .box-three").addClass('none');
-            $(".bottom .box-four").addClass('none');
-        }else if(x==3){
-            $(".three a").addClass('active');
-            $(".two a").removeClass('active');
-            $(".one a").removeClass('active');
-            $(".four a").removeClass('active');
-            $(".bottom .box-three").removeClass('none');
-            $(".bottom .box-two").addClass('none');
-            $(".bottom .box-one").addClass('none');
-            $(".bottom .box-four").addClass('none');
-        }
-    }
-    // 计算最终收益
-
-        function jisuanOne(x){
-            if(x==1){
-                var benjinNum = new BigNumber(document.getElementById("benjin").value);
-                var shouyilvNum = new BigNumber(document.getElementById("shouyilv").value);
-                var touzinianxianNum = new BigNumber(document.getElementById("touzinianxian").value);
-                var shouyiNum = new BigNumber(1+shouyilvNum/100);
-                var zuizhongshouyi = benjinNum.multipliedBy(shouyiNum.pow(touzinianxianNum)).valueOf();
-                console.log(zuizhongshouyi);
-                if(String(zuizhongshouyi).indexOf(".")==-1){
-                    document.getElementById("zuizhongshouyi").value =zuizhongshouyi
-                    console.log(zuizhongshouyi);
-                }else{
-                    var splitArr = String(zuizhongshouyi).split('.');
-                    document.getElementById("zuizhongshouyi").value =splitArr[0]+'.'+splitArr[1].substr(0,3);
-                    console.log(zuizhongshouyi);
-                }
-            }else if(x==2){
-                document.getElementById("benjin").value = "";
-                document.getElementById("shouyilv").value = "";
-                document.getElementById("touzinianxian").value = "";
-                document.getElementById("zuizhongshouyi").value = "";
-            }
-
-        }
-    
 </body>
 </html>
