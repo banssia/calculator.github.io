@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>存款数据计算器</title>
+  <style>
+ /*     html {
+  font-family: sans-serif;
+}
+a
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}   */
+.info-box {
+  width: 450px;
+  height: 400px;
+  margin-top: 1800px;
+}
+.info-box ul {
+  padding-left: 0;
+  margin-top: 1800px;
+}
+.info-box li {
+  float: right;
+  list-style-type: none;
+  width: 150px;
+}
+
+.info-box li a {
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  line-height: 3;
+  background-color: white;
+  color: black;
+  text-align: center;
+}
+.info-box li a:focus, .info-box li a:hover {
+  background-color: white;
+  color: rgb(96, 255, 247);
+  border-bottom: 1px solid #046ef2;
+}
+
+.info-box li a.active {
+  background-color: white;
+  color: rgb(96, 255, 247);
+  border-bottom: 1px solid #046ef2;
+}
+.info-box .panels {
+  height: 300px;
+  position: relative;
+  clear: both;
+}
+.info-box .article {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 450px;
+  height: 300px;
+  padding: 10px;
+  color: black;
+  background-color: #e4e4e4;
+  border-radius: 10px;
+  padding: 10px 12px;
+  box-shadow: 3px 4px 5px #d3d4d6;
+  z-index: 1;
+}
+.jisuanBtn {
+    background-color: #9dcfec;
+}
+
+.qingkongBtn {
+    background-color: #f8c98c;
+    margin-left: 20px;
+}
+
+.jisuanBtn, .qingkongBtn {
+    display: inline-block;
+    width: 81px;
+    height: 25px;
+    font: 14px "苹方";
+    color: black;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 2px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+.header {
+    width: 100%;
+    height: 70px;
+    background-color: rgba(122, 165, 179, 0.651);
+    text-align: center;
+    line-height: 70px;
+    color: #865a5a;
+}
+.section_left {
+    width: 16%;
+    height: 500px;
+    float: left;
+    background-color: rgb(18, 23, 37);
+}
+.section_left ul li {
+    list-style: none;
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #99a5b4;
+    text-align: center;
+    line-height: 50px;
+}
+.sidebar_right {
+    width: 78%;
+    float: right;
+    height: 470px;
+    background-color: rgba(241, 240, 240, 0.164);
+    margin-right: 3%;
+    margin-top: 15px;
+    text-align: center;
+    line-height: 470px;
+    border-radius: 10px;
+    color: #330909;
+}
+.sidebar_right .yg {
+    list-style: none;
+    width: 100%;
+    height: 80%;
+    border-bottom: 1px solid #ffffff;
+    text-align: center;
+    line-height: 50px;
+}
+.sidebar_right article {
+  position: absolute;
+  top: 100px;
+  left: 250px;
+  width: 900px;
+  height: 400px;
+  padding: 10px;
+  /*color: black;
+  background-color: #e4e4e4;
+  border-radius: 10px;
+  padding: 10px 12px;
+  box-shadow: 3px 4px 5px ;*/
+}
+.sidebar_right .yg-1{
+    display:block;
+}
+.sidebar_right .yg-0{
+    display:none;
+}
+.title {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    top: 100px;
+    margin: auto;
+    bottom: 0;
+    color: rgb(194, 102, 49);
+    font-size: 24px;
+    font-weight: 500;
+}
+.titles {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    top: 200px;
+    margin: auto;
+    bottom: 0;
+    color: rgb(99, 55, 28);
+    font-size: 16px;
+    font-weight: 200px;
+}
+.titlepage2{
+  position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    top: 20px;
+    margin: auto;
+    bottom: 0;
+    color: rgb(194, 102, 49);
+    font-size: 24px;
+    font-weight: 500;
+}
+.titlespage2{
+  position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    top: 60px;
+    margin: auto;
+    bottom: 0;
+    color: rgb(99, 55, 28);
+    font-size: 16px;
+    font-weight: 200px;
+}
+.explanation{
+  position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    top: 260px;
+    margin: auto;
+    bottom: 0;
+    color: rgb(99, 55, 28);
+    font-size: 16px;
+    font-weight: 200px;
+}
+
+  </style>
+</head>
+<body background="background-2.jpg">
+  <header class="header">
+    <h1>存款数据计算器</h1>
+  </header>
+  <section class="section_left">
+    <ul>
+        <li>
+            <a href="#/index">首页</a>
+        </li>
+        <li>
+            <a href="#/zncw">智能财务与存款</a>
+        </li>
+        <li>
+            <a href="#/video">相关视频</a>
+        </li>
+        <li>
+            <a href="#/calculator1">普通存储求收益计算器</a>
+        </li>
+        <li>
+          <a href="#/calculator2">连续存储求收益计算器</a>
+        </li>
+        <li>
+          <a href="#/calculator3">连续存储求年金计算器</a>
+        </li>
+    </ul>
+  </section>
+  <sidebar class="sidebar_right">
+    <div class="yg">
+      <article class="yg-1">
+        <h3 class="title">存款数据计算器</h3>
+        <h3 class="titles">用来计算存款利息相关数据的计算器</h3>
+      </article>
+      <article class="yg-0">
+        <h3 class="titlepage2">智能财务与存款</h3>
+        <div class="titlespage2">将财务管理理论模型化，通过智能匹配方式，将数据导入数据仓库或以数据仓库现有数据为分析对象，<br/>根据财务管理模型，利用计算机高速准确的计算能力，对数据仓库中的数据进行处理，<br/>迅速得到企业经营诊断报告，形成经营决策建议。财务智能从世界范围看，<br/>理论和实践才刚刚起步，但对改变企业管理、特别是财务管理却起着革命性的提升工作效率、辅助经营决策的作用。<br/>存款是银行最基本的业务之一，没有存款就没有贷款，也就没有银行。从产生时间来看，存款早于银行。<br/>中国在唐代就出现了专门收受和保管钱财的柜坊，存户可凭类似支票的“贴”或其他信物支钱。<br/>中世纪在欧洲出现的钱币兑换商也接受顾客存钱，属钱财保管性质，不支付利息，是外国银行存款业务的萌芽。<br/>随着银行和其他金融机构的出现，银行的存款业务得到了迅速发展。<br/>智能财务和存款的结合使存款变得更容易。</div>
+      </article>
+      <article class="yg-0">
+        <p>视频</p>
+      </article>
+      <article class="yg-0">
+        <div class="panels">
+          <div class="aeticle">
+              <p><span class="span1">本金：</span><input id="benjin" type="text" ><span> 元</span></p>
+              <p><span class="span1">利率：</span><input id="shouyilv" type="text"><span>&nbsp; %</span></p>
+              <p><span class="span1">存储年限：</span><input id="touzinianxian" type="text"><span> 年</span></p>
+              <div><a class="jisuanBtn" onclick="jisuanOne(1)">计算</a><a onclick="jisuanOne(2)" class="qingkongBtn">清空</a></div>
+              <p class="last"><span class="span1">最终收益：</span><input id="zuizhongshouyi" type="text"><span> 元</span></p>
+          </div>
+        </div>
+        <div class="explanation">输入本金、利率和你想要存储的时间</br>点击计算</br>在最终收益栏中会出现你存款的收益</div>
+      </article>
+      <article class="yg-0">
+        <div class="panels">
+          <div class="active">
+            <p><span class="span1">预计每年存储金额：</span><input id="benjin" type="text" ><span> 元</span></p>
+          <p><span class="span1">利率：</span><input id="shouyilv" type="text"><span>&nbsp; %</span></p>
+          <p><span class="span1">存储年限：</span><input id="touzinianxian" type="text"><span> 年</span></p>
+          <div><a class="jisuanBtn" onclick="jisuanTwo(1)">计算</a><a onclick="jisuanTwo(2)" class="qingkongBtn">清空</a></div>
+          <p class="last"><span class="span1">最终收益：</span><input id="zuizhongshouyi" type="text"><span> 元</span></p>
+          </div>
+        </div>
+        <div class="exception">输入你每年想要存储的金额、利率和你想要存储的时间</br>点击计算</br>在最终收益栏中可以看见你存款的收益</div>
+      </article>
+      <article class="yg-0">
+        <div class="panels">
+          <div class="active">
+            <p><span class="span1">预计最终取出金额：</span><input id="benjin" type="text" ><span> 元</span></p>
+            <p><span class="span1">利率：</span><input id="shouyilv" type="text"><span>&nbsp; %</span></p>
+            <p><span class="span1">存储年限：</span><input id="touzinianxian" type="text"><span> 年</span></p>
+            <div><a class="jisuanBtn" onclick="jisuanThree(1)">计算</a><a onclick="jisuanThree(2)" class="qingkongBtn">清空</a></div>
+            <p class="last"><span class="span1">每年存储金额：</span><input id="zuizhongshouyi" type="text"><span> 元</span></p>
+          </div>
+        </div>
+        <div class="exception">输入你未来想要取出的金额、利率和你从现在到你想取钱的时间年限</br>点击计算</br>在最终收益栏中可以看见你每年需要存多少钱</div>
+      </article>
+    </div>
+  </sidebar>
+
+  <script type="text/javascript" >
+   (function(){
+    var Router = function () {
+        this.routes = {};//保存路由
+        this.curUrl = '';//获取当前的hash值
+    }
+    Router.prototype.init = function () {
+        //hashchange事件，当hash变化时，调用reloadPage方法
+        //第一个this指向window，bind里面的this指向调用这个函数的对象，具体使用方法可以百度
+        window.addEventListener('hashchange', this.reloadPage.bind(this));
+    }
+
+    Router.prototype.reloadPage = function () {
+        this.curUrl = location.hash.substring(1) || '/';//获取当前hash的值（去掉#）
+        this.routes[this.curUrl]();      //运行当前hsah值对应的函数
+    }
+
+    Router.prototype.map = function( key, callback ){ //保存路由对应的函数：
+        this.routes[key] = callback;  //key表示hash的值（去掉#），callback表示当前hash对应的函数
+    } 
+    window.oRou = Router;
+})()
+
+
+var oRouter2 = new oRou();
+oRouter2.init();
+oRouter2.map('/index',function () {
+    var oSidebar1 = document.getElementsByClassName("yg-1");
+    oSidebar1[0].className = "yg-0";
+    var oSideba2r = document.getElementsByClassName("yg-0");
+    oSidebar2[0].className = "yg-1";
+})
+
+oRouter2.map('/zncw',function () {
+    var oSidebar1 = document.getElementsByClassName("yg-1");
+    oSidebar1[0].className = "yg-0";
+    var oSidebar2 = document.getElementsByClassName("yg-0");
+    oSidebar2[1].className = "yg-1";
+})
+
+oRouter2.map('/video',function () {
+    var oSidebar1 = document.getElementsByClassName("yg-1");
+    oSidebar1[0].className = "yg-0";
+    var oSidebar2 = document.getElementsByClassName("yg-0");
+    oSidebar2[2].className = "yg-1";
+})
+
+oRouter2.map('/calculator1',function () {
+    var oSidebar1 = document.getElementsByClassName("yg-1");
+    oSidebar1[0].className = "yg-0";
+    var oSidebar2 = document.getElementsByClassName("yg-0");
+    oSidebar2[3].className = "yg-1";
+})
+oRouter2.map('/calculator2',function () {
+    var oSidebar1 = document.getElementsByClassName("yg-1");
+    oSidebar1[0].className = "yg-0";
+    var oSidebar2 = document.getElementsByClassName("yg-0");
+    oSidebar2[4].className = "yg-1";
+})
+
+oRouter2.map('/calculator3',function () {
+    var oSidebar1 = document.getElementsByClassName("yg-1");
+    oSidebar1[0].className = "yg-0";
+    var oSidebar2 = document.getElementsByClassName("yg-0");
+    oSidebar2[5].className = "yg-1";
+})
+   </script>
+  
+</body>
+</html>
+
