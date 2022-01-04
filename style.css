@@ -1,0 +1,220 @@
+.info-box {
+  width: 450px;
+  height: 400px;
+  margin-top: 0;
+}
+.info-box ul {
+  padding-left: 0;
+  margin-top: 0;
+}
+.info-box li {
+  float: right;
+  list-style-type: none;
+  width: 150px;
+}
+
+.info-box li a {
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  line-height: 3;
+  background-color: white;
+  color: black;
+  text-align: center;
+}
+.info-box li a:focus, .info-box li a:hover {
+  background-color: white;
+  color: rgb(96, 255, 247);
+  border-bottom: 1px solid #046ef2;
+}
+
+.info-box li a.active {
+  background-color: white;
+  color: rgb(96, 255, 247);
+  border-bottom: 1px solid #046ef2;
+}
+.info-box .panels {
+  background-color: #9dcfec;
+  height: 300px;
+  position: relative;
+  clear: both;
+}
+.info-box .article {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 450px;
+  height: 300px;
+  padding: 10px;
+  color: black;
+  background-color: #e4e4e4;
+  border-radius: 10px;
+  padding: 10px 12px;
+  box-shadow: 3px 4px 5px #d3d4d6;
+  z-index: 1;
+}
+.jisuanBtn {
+    background-color: #9dcfec;
+}
+
+.qingkongBtn {
+    background-color: #f8c98c;
+    margin-left: 20px;
+}
+
+.jisuanBtn, .qingkongBtn {
+    display: inline-block;
+    width: 81px;
+    height: 25px;
+    font: 14px "苹方";
+    color: black;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 2px;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+.header {
+    width: 100%;
+    height: 70px;
+    background-color: rgba(122, 165, 179, 0.651);
+    text-align: center;
+    line-height: 70px;
+    color: #865a5a;
+}
+.section_left {
+    width: 16%;
+    height: 500px;
+    float: left;
+    background-color: rgb(18, 23, 37);
+}
+.section_left ul li {
+    list-style: none;
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #99a5b4;
+    text-align: center;
+    line-height: 50px;
+}
+.sidebar_right {
+    width: 78%;
+    float: right;
+    height: 470px;
+    background-color: rgba(241, 240, 240, 0.164);
+    margin-right: 3%;
+    margin-top: 15px;
+    text-align: center;
+    line-height: 470px;
+    border-radius: 10px;
+    color: #330909;
+}
+.sidebar_right .yg {
+    list-style: none;
+    width: 100%;
+    height: 80%;
+    border-bottom: 1px solid #ffffff;
+    text-align: center;
+    line-height: 50px;
+}
+.sidebar_right article {
+  position: absolute;
+  top: 100px;
+  left: 250px;
+  width: 900px;
+  height: 400px;
+  padding: 10px;
+  /*color: black;
+  background-color: #e4e4e4;
+  border-radius: 10px;
+  padding: 10px 12px;
+  box-shadow: 3px 4px 5px ;*/
+}
+.sidebar_right .yg-1{
+    display:block;
+}
+.sidebar_right .yg-0{
+    display:none;
+}
+.sidebar_right .panels{
+  position: relative;
+  background-color: #d1d1d1;
+  width: 400px;
+  height: 250px;
+  top:50px;
+  left:100px;
+  clear: both;
+}
+.title {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    top: 100px;
+    margin: auto;
+    bottom: 0;
+    color: rgb(194, 102, 49);
+    font-size: 24px;
+    font-weight: 500;
+}
+.titles {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    top: 200px;
+    margin: auto;
+    bottom: 0;
+    color: rgb(99, 55, 28);
+    font-size: 16px;
+    font-weight: 200px;
+}
+.titlepage2{
+  position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    top: 20px;
+    margin: auto;
+    bottom: 0;
+    color: rgb(194, 102, 49);
+    font-size: 24px;
+    font-weight: 500;
+}
+.titlespage2{
+  position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    top: 60px;
+    margin: auto;
+    bottom: 0;
+    color: rgb(99, 55, 28);
+    font-size: 16px;
+    font-weight: 200px;
+}
+.explanation{
+  position: absolute;
+    display: flex;
+    justify-content: left;
+    left: 600px;
+    right: 0;
+    top: 60px;
+    margin: auto;
+    bottom: 0;
+    text-align: left;
+    color: rgb(114, 64, 32);
+    font-size: 16px;
+    font-weight: 100px;
+}
